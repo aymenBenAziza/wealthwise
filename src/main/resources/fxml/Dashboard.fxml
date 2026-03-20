@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.wealthwise.controllers.DashboardController"
+            style="-fx-background-color: #f4f5f7;">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="0"
+              style="-fx-background-color: #185FA5; -fx-padding: 14 28 14 28;">
+
+            <HBox alignment="CENTER_LEFT" spacing="16" HBox.hgrow="ALWAYS">
+                <Label text="WEALTHWISE"
+                       style="-fx-font-size: 11; -fx-font-weight: bold;
+                              -fx-text-fill: #B5D4F4; -fx-letter-spacing: 2;"/>
+                <Label fx:id="welcomeLabel"
+                       style="-fx-font-size: 15; -fx-font-weight: bold;
+                              -fx-text-fill: white;"/>
+            </HBox>
+
+            <Button text="Profil" onAction="#goToProfile"
+                    style="-fx-background-color: rgba(255,255,255,0.15);
+               -fx-text-fill: white; -fx-font-size: 12;
+               -fx-background-radius: 6; -fx-cursor: hand; -fx-padding: 6 14;"/>
+            <Button text="Deconnexion" onAction="#handleLogout"
+                    style="-fx-background-color: transparent; -fx-text-fill: #B5D4F4;
+                           -fx-font-size: 12; -fx-cursor: hand;
+                           -fx-border-color: transparent;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="20" style="-fx-padding: 40;">
+
+            <Label text="Tableau de bord"
+                   style="-fx-font-size: 24; -fx-font-weight: bold;
+                          -fx-text-fill: #222222;"/>
+
+            <Label text="Navigation reussie ! Vous etes connecte."
+                   style="-fx-font-size: 14; -fx-text-fill: #1D9E75;"/>
+
+            <Label fx:id="userInfoLabel"
+                   style="-fx-font-size: 13; -fx-text-fill: #888888;"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>

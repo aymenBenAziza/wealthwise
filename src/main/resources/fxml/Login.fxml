@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<HBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.wealthwise.controllers.LoginController"
+      style="-fx-background-color: white;">
+
+    <!-- ── LEFT: Form panel ─────────────────────────────────────────── -->
+    <VBox alignment="CENTER" spacing="0"
+          style="-fx-padding: 60 50; -fx-background-color: white;"
+          HBox.hgrow="ALWAYS">
+
+        <Label text="WEALTHWISE"
+               style="-fx-font-size: 11; -fx-font-weight: bold;
+                      -fx-text-fill: #185FA5; -fx-letter-spacing: 2;">
+            <VBox.margin><Insets bottom="32"/></VBox.margin>
+        </Label>
+
+        <Label text="Bienvenue"
+               style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: #222222;"/>
+        <Label text="Connectez-vous a votre compte"
+               style="-fx-font-size: 13; -fx-text-fill: #888888;">
+            <VBox.margin><Insets bottom="32"/></VBox.margin>
+        </Label>
+
+        <!-- Email -->
+        <VBox spacing="4" maxWidth="340">
+            <VBox.margin><Insets bottom="12"/></VBox.margin>
+            <Label text="Email" style="-fx-font-size: 12; -fx-text-fill: #555555;"/>
+            <TextField fx:id="emailField" promptText="exemple@email.com" maxWidth="340"
+                       style="-fx-pref-height: 40; -fx-font-size: 13;
+                              -fx-background-radius: 8; -fx-border-radius: 8;
+                              -fx-border-color: #dddddd; -fx-border-width: 0.5;"/>
+            <Label fx:id="emailError" text=""
+                   style="-fx-text-fill: #E24B4A; -fx-font-size: 11;"/>
+        </VBox>
+
+        <!-- Password -->
+        <VBox spacing="4" maxWidth="340">
+            <VBox.margin><Insets bottom="24"/></VBox.margin>
+            <Label text="Mot de passe" style="-fx-font-size: 12; -fx-text-fill: #555555;"/>
+            <PasswordField fx:id="passwordField" promptText="••••••••" maxWidth="340"
+                           style="-fx-pref-height: 40; -fx-font-size: 13;
+                                  -fx-background-radius: 8; -fx-border-radius: 8;
+                                  -fx-border-color: #dddddd; -fx-border-width: 0.5;"/>
+            <Label fx:id="passwordError" text=""
+                   style="-fx-text-fill: #E24B4A; -fx-font-size: 11;"/>
+        </VBox>
+
+        <!-- Error label -->
+        <Label fx:id="errorLabel" text="" wrapText="true" maxWidth="340">
+            <VBox.margin><Insets bottom="16"/></VBox.margin>
+        </Label>
+
+        <!-- Login button -->
+        <Button text="Se connecter" onAction="#handleLogin"
+                maxWidth="340" prefHeight="42"
+                style="-fx-background-color: #185FA5; -fx-text-fill: white;
+                       -fx-font-size: 14; -fx-font-weight: bold;
+                       -fx-background-radius: 8; -fx-cursor: hand;">
+            <VBox.margin><Insets bottom="16"/></VBox.margin>
+        </Button>
+
+        <!-- Register link -->
+        <HBox alignment="CENTER" spacing="4">
+            <Label text="Pas encore de compte ?"
+                   style="-fx-font-size: 12; -fx-text-fill: #888888;"/>
+            <Button text="S'inscrire" onAction="#goToRegister"
+                    style="-fx-background-color: transparent; -fx-text-fill: #185FA5;
+                           -fx-font-size: 12; -fx-cursor: hand;
+                           -fx-border-color: transparent; -fx-font-weight: bold;"/>
+        </HBox>
+
+    </VBox>
+
+    <!-- ── RIGHT: Blue branding panel ──────────────────────────────── -->
+    <VBox alignment="CENTER" spacing="16" prefWidth="380"
+          style="-fx-background-color: #185FA5; -fx-padding: 60 40;">
+
+        <Label text="WealthWise"
+               style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: white;"/>
+        <Label text="Gerez vos finances personnelles avec intelligence"
+               wrapText="true"
+               style="-fx-font-size: 14; -fx-text-fill: #B5D4F4;
+                      -fx-text-alignment: center;">
+            <VBox.margin><Insets bottom="32"/></VBox.margin>
+        </Label>
+
+        <VBox spacing="12">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="→" style="-fx-text-fill: #B5D4F4; -fx-font-size: 14;"/>
+                <Label text="Suivi des transactions en temps reel"
+                       style="-fx-text-fill: white; -fx-font-size: 13;"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="→" style="-fx-text-fill: #B5D4F4; -fx-font-size: 14;"/>
+                <Label text="Budgets intelligents par categorie"
+                       style="-fx-text-fill: white; -fx-font-size: 13;"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="→" style="-fx-text-fill: #B5D4F4; -fx-font-size: 14;"/>
+                <Label text="Objectifs d'epargne avec suivi"
+                       style="-fx-text-fill: white; -fx-font-size: 13;"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="→" style="-fx-text-fill: #B5D4F4; -fx-font-size: 14;"/>
+                <Label text="Conseils IA personnalises"
+                       style="-fx-text-fill: white; -fx-font-size: 13;"/>
+            </HBox>
+        </VBox>
+
+    </VBox>
+
+</HBox>

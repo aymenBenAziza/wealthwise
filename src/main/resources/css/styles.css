@@ -1,0 +1,21 @@
+
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-font-size: 14px;
+}
+
+.button {
+    -fx-cursor: hand;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+.text-field, .password-field, .combo-box, .date-picker {
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-pref-height: 36;
+}
+
+.label {
+    -fx-text-fill: #2c3e50;
+}
