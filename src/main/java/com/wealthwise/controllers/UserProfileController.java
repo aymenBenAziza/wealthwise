@@ -227,8 +227,7 @@ public class UserProfileController {
     @FXML public void goToDashboard()    { navigateTo("/fxml/Dashboard.fxml"); }
     @FXML public void goToTransactions() { navigateTo("/fxml/Transaction.fxml"); }
     @FXML public void goToBudgets()      { navigateTo("/fxml/Budget.fxml"); }
-    @FXML public void goToSavings()      { navigateTo("/fxml/SavingsGoal.fxml"); }
-    @FXML public void goToAI()           { navigateTo("/fxml/AI.fxml"); }
+
 
     @FXML
     public void handleLogout() {

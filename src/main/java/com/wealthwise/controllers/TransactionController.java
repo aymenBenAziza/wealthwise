@@ -429,9 +429,6 @@ public class TransactionController {
     // ── Navigation ────────────────────────────────────────────────────────────
     @FXML public void goToDashboard()     { navigateTo("/fxml/Dashboard.fxml"); }
     @FXML public void goToBudgets()       { navigateTo("/fxml/Budget.fxml"); }
-    @FXML public void goToSavings()       { navigateTo("/fxml/SavingsGoal.fxml"); }
-    @FXML public void goToAI()            { navigateTo("/fxml/AI.fxml"); }
-    @FXML public void goToNotifications() { navigateTo("/fxml/Notification.fxml"); }
     @FXML public void goToProfile()       { navigateTo("/fxml/UserProfile.fxml"); }
     @FXML public void handleLogout() {
         SessionManager.getInstance().logout();

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.wealthwise.controllers.BudgetController"
+            style="-fx-background-color: #f4f5f7;">
+
+    <!-- ── TOP BAR ──────────────────────────────────────────────────── -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="0"
+              style="-fx-background-color: #185FA5; -fx-padding: 14 28 14 28;">
+
+            <HBox alignment="CENTER_LEFT" spacing="16" HBox.hgrow="ALWAYS">
+                <Label text="WEALTHWISE"
+                       style="-fx-font-size: 11; -fx-font-weight: bold;
+                              -fx-text-fill: #B5D4F4; -fx-letter-spacing: 2;"/>
+            </HBox>
+
+            <HBox spacing="8" alignment="CENTER_RIGHT">
+                <Button text="Tableau de bord" onAction="#goToDashboard"
+                        style="-fx-background-color: rgba(255,255,255,0.15);
+                               -fx-text-fill: white; -fx-font-size: 12;
+                               -fx-background-radius: 6; -fx-cursor: hand; -fx-padding: 6 14;"/>
+                <Button text="Transactions" onAction="#goToTransactions"
+                        style="-fx-background-color: rgba(255,255,255,0.15);
+                               -fx-text-fill: white; -fx-font-size: 12;
+                               -fx-background-radius: 6; -fx-cursor: hand; -fx-padding: 6 14;"/>
+                <Button text="Budgets"
+                        style="-fx-background-color: white; -fx-text-fill: #185FA5;
+                               -fx-font-size: 12; -fx-font-weight: bold;
+                               -fx-background-radius: 6; -fx-cursor: hand; -fx-padding: 6 14;"/>
+                <Button text="Profil" onAction="#goToProfile"
+                        style="-fx-background-color: rgba(255,255,255,0.15);
+                           -fx-text-fill: white; -fx-font-size: 12;
+                           -fx-background-radius: 6; -fx-cursor: hand;
+                           -fx-padding: 6 14;"/>
+                <Button text="Deconnexion" onAction="#handleLogout"
+                        style="-fx-background-color: transparent; -fx-text-fill: #B5D4F4;
+                               -fx-font-size: 12; -fx-background-radius: 6;
+                               -fx-cursor: hand; -fx-padding: 6 10; -fx-border-color: transparent;">
+                    <HBox.margin><Insets left="8"/></HBox.margin>
+                </Button>
+            </HBox>
+        </HBox>
+    </top>
+
+    <!-- ── BODY ─────────────────────────────────────────────────────── -->
+    <center>
+        <ScrollPane fitToWidth="true"
+                    style="-fx-background-color: transparent; -fx-border-color: transparent;">
+            <VBox spacing="20" style="-fx-padding: 24;">
+
+                <!-- Page title -->
+                <VBox spacing="4">
+                    <Label fx:id="monthLabel" text="Budgets"
+                           style="-fx-font-size: 20; -fx-font-weight: bold;
+                                  -fx-text-fill: #222222;"/>
+                    <Label text="Definissez vos limites de depenses par categorie"
+                           style="-fx-font-size: 13; -fx-text-fill: #888888;"/>
+                </VBox>
+
+                <!-- ── FORM CARD ───────────────────────────────────── -->
+                <VBox spacing="14"
+                      style="-fx-background-color: white;
+                             -fx-border-color: #eeeeee; -fx-border-width: 0.5;
+                             -fx-background-radius: 12; -fx-border-radius: 12;
+                             -fx-padding: 18 22;">
+
+                    <Label text="Ajouter un budget"
+                           style="-fx-font-size: 13; -fx-font-weight: bold;
+                                  -fx-text-fill: #333333;"/>
+
+                    <HBox spacing="12" alignment="BOTTOM_LEFT">
+
+                        <!-- Categorie -->
+                        <VBox spacing="4" HBox.hgrow="ALWAYS">
+                            <Label text="Categorie"
+                                   style="-fx-font-size: 12; -fx-text-fill: #555555;"/>
+                            <ComboBox fx:id="categoryCombo" maxWidth="Infinity"
+                                      promptText="-- Categorie --"
+                                      style="-fx-pref-height: 36; -fx-font-size: 13;
+                                             -fx-background-radius: 6;"/>
+                            <Label fx:id="categoryError" text=""
+                                   style="-fx-text-fill: #E24B4A; -fx-font-size: 11;"/>
+                        </VBox>
+
+                        <!-- Limite -->
+                        <VBox spacing="4" HBox.hgrow="ALWAYS">
+                            <Label text="Limite mensuelle (TND)"
+                                   style="-fx-font-size: 12; -fx-text-fill: #555555;"/>
+                            <TextField fx:id="limitField" promptText="ex: 300"
+                                       style="-fx-pref-height: 36; -fx-font-size: 13;
+                                              -fx-background-radius: 6; -fx-border-radius: 6;
+                                              -fx-border-color: #dddddd; -fx-border-width: 0.5;"/>
+                            <Label fx:id="limitError" text=""
+                                   style="-fx-text-fill: #E24B4A; -fx-font-size: 11;"/>
+                        </VBox>
+
+                        <!-- Add button -->
+                        <VBox alignment="BOTTOM_CENTER">
+                            <Button text="+ Ajouter" onAction="#handleAdd"
+                                    style="-fx-pref-height: 36;
+                                           -fx-background-color: #185FA5;
+                                           -fx-text-fill: white; -fx-font-size: 13;
+                                           -fx-font-weight: bold; -fx-background-radius: 6;
+                                           -fx-cursor: hand; -fx-padding: 0 20;"/>
+                            <Label text="" style="-fx-font-size: 11;"/>
+                        </VBox>
+
+                    </HBox>
+
+                    <Label fx:id="messageLabel" text="" wrapText="true"
+                           style="-fx-font-size: 12; -fx-background-radius: 6;
+                                  -fx-padding: 6 12;"/>
+                </VBox>
+
+                <!-- ── BUDGET CARDS ────────────────────────────────── -->
+                <VBox fx:id="budgetContainer" spacing="12"/>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>
