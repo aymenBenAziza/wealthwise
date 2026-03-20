@@ -30,6 +30,7 @@ public class DashboardController {
     }
 
     @FXML public void goToProfile() { navigateTo("/fxml/UserProfile.fxml"); }
+    @FXML public void goToTransactions() { navigateTo("/fxml/Transaction.fxml"); }
 
     private void navigateTo(String fxml) {
         try {
